@@ -4,6 +4,10 @@
     #include <windows.h>
 #endif
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 typedef struct _WONBLENDFUNCTION {
     BYTE BlendOp;
     BYTE BlendFlags;
@@ -24,4 +28,8 @@ WonAlphaBlend(HDC hdc, INT x, INT y, INT cx, INT cy,
     #define GdiAlphaBlend WonAlphaBlend
     #define AC_SRC_OVER WON_AC_SRC_OVER
     #define AC_SRC_ALPHA WON_AC_SRC_ALPHA
+#endif
+
+#ifdef __cplusplus
+} // extern "C"
 #endif
